@@ -86,6 +86,7 @@ int main(){
 	cout << "The smallest number is: " << small << endl;
 	cout << "The largest number is: " << large << endl;
 	cout << "The sum of the values in meters: " << sum << endl;
+	cout << "The number of values entered: " << round << endl;
 	cout << "The values in increasing order:" << endl;
 
 	sort(values);
