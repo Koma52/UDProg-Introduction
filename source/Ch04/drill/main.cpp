@@ -1,40 +1,97 @@
 #include "std_lib_facilities.h"
 
 int main(){
-	double x = 0;
-	double y = 0;
-	char terminate = '0';
-	
-	while(terminate != '|'){
-		cout << "Write a number: \n";
-		cin >> x;
+	int round = 0;
+	double sum = 0;
+	double small = 0;
+	double large = 0;
+	double z = 0;
+	const double diff = 1.0/100;    // The number used by the almost equal part
+	string unit = "";
+	vector<double> values;
 
-		cout << "Write another number: \n";
-		cin >> y;
-
-		cout << "The numbers are: " << x << " and " << y << endl;
-		
-		if(x != y){
-			if(x > y){
-				cout << "The smaller number is: " << y << endl;
-				cout << "The larger number is: " << x << endl;
-				if((x - y) < (1.0/100)){
-					cout << "The numbers are almost equal." << endl;
-				}
-			}else{
-				cout << "The smaller number is: " << x << endl;
-				cout << "The larger number is: " << y << endl;
-				if((y - x) < (1.0/100)){
-					cout << "The numbers are almost equal." << endl;
-				}
-			}
-		}else{
-			cout << "The numbers are equal" << endl;
+	while(cin >> z >> unit){
+		if(unit == "cm"){
+		if(round == 0){
+			large = z;
+			small = z;
 		}
+		if(z > large){
+			large = z;
+			cout << large << " is the largest number so far." << endl;
+		}
+		else if(z < small){
+			small = z;
+			cout << small << " is the smallest number so far." << endl;
+		}
+		sum += z * 0.01;
+		values.push_back(z * 0.01);
+		round++;
+		}
+                else if(unit == "m"){
+		if(round == 0){
+			large = z;
+			small = z;
+		}
+		if(z > large){
+			large = z;
+			cout << large << " is the largest number so far." << endl;
+		}
+		else if(z < small){
+			small = z;
+			cout << small << " is the smallest number so far." << endl;
+		}
+		sum += z;
+		values.push_back(z);
+		round++;
+		}
+                else if(unit == "in"){
+		if(round == 0){
+			large = z;
+			small = z;
+		}
+		if(z > large){
+			large = z;
+			cout << large << " is the largest number so far." << endl;
+		}
+		else if(z < small){
+			small = z;
+			cout << small << " is the smallest number so far." << endl;
+		}
+		sum += z * 0.0254;
+		values.push_back(z * 0.0254);
+		round++;
+		}
+                else if(unit == "ft"){
+		if(round == 0){
+			large = z;
+			small = z;
+		}
+		if(z > large){
+			large = z;
+			cout << large << " is the largest number so far." << endl;
+		}
+		else if(z < small){
+			small = z;
+			cout << small << " is the smallest number so far." << endl;
+		}
+		sum += z * 0.3048;
+		values.push_back(z * 0.3048);
+		round++;
+		}
+		else{
+			cout << "Illegal unit. Please use 'm', 'cm', 'in' or 'ft'!" << endl;
+		}
+	}
+	cout << "The smallest number is: " << small << endl;
+	cout << "The largest number is: " << large << endl;
+	cout << "The sum of the values in meters: " << sum << endl;
+	cout << "The values in increasing order:" << endl;
 
+	sort(values);
 
-
-		cin >> terminate;
+	for(auto value : values){
+		cout << value << endl;
 	}
 
 	return 0;
