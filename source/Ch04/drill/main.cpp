@@ -6,6 +6,9 @@ int main(){
 	double small = 0;
 	double large = 0;
 	double z = 0;
+	const double cmm = 0.01;
+	const double inm = 0.0254;
+	const double ftm = 0.3048;
 	const double diff = 1.0/100;    // The number used by the almost equal part
 	string unit = "";
 	vector<double> values;
@@ -24,8 +27,8 @@ int main(){
 			small = z;
 			cout << small << " is the smallest number so far." << endl;
 		}
-		sum += z * 0.01;
-		values.push_back(z * 0.01);
+		sum += z * cmm;
+		values.push_back(z * cmm);
 		round++;
 		}
                 else if(unit == "m"){
@@ -58,8 +61,8 @@ int main(){
 			small = z;
 			cout << small << " is the smallest number so far." << endl;
 		}
-		sum += z * 0.0254;
-		values.push_back(z * 0.0254);
+		sum += z * inm;
+		values.push_back(z * inm);
 		round++;
 		}
                 else if(unit == "ft"){
@@ -75,8 +78,8 @@ int main(){
 			small = z;
 			cout << small << " is the smallest number so far." << endl;
 		}
-		sum += z * 0.3048;
-		values.push_back(z * 0.3048);
+		sum += z * ftm;
+		values.push_back(z * ftm);
 		round++;
 		}
 		else{

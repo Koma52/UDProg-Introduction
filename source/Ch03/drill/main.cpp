@@ -17,6 +17,11 @@ int main(){
 	cout << "Enter an 'm' if your friend is male or 'f' if female: \n";
 
 	cin >> friend_sex;
+
+	while (!(friend_sex == 'm' || friend_sex == 'f')){
+		cerr << "Please give a valid character: 'm' for male, 'f' for female!" << endl;
+		cin >> friend_sex;
+	}
 	
 	cout << "Enter the age of the recipient: \n";
 
