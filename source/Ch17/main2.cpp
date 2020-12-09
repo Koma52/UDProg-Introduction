@@ -22,6 +22,7 @@ try {
     }
 
     cout << "The pointer: " << p2 << "and the array: " << endl;
+    cout << &p2[1] << endl;
 
     // for (int i = 0; i < 7; ++i){
     //     cout << p2[i] << " ";
