@@ -31,6 +31,7 @@ try {
 
     int x = 7;
     int y = 9;
+    int& z = x;
     swap_r(x, y);
     swap_v(7, 9);
     const int cx = 7;
